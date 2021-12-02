@@ -3,10 +3,10 @@ import sys
 
 def count_increases(measurements:list)->int:
     count = 0
-    for i,_ in enumerate(measurements):
-        if i+1 == len(measurements):
+    for index in enumerate(measurements):
+        if index+1 == len(measurements):
             return count
-        elif measurements[i+1]>measurements[i]:
+        elif measurements[index+1]>measurements[i]:
             count += 1
 
 
