@@ -1,3 +1,5 @@
+import sys
+
 def count_sum_of_measurements(measurements:list)->int:
     count = 0
     window = sum(measurements[:3])
@@ -13,6 +15,10 @@ def count_sum_of_measurements(measurements:list)->int:
 
 
 if __name__ == '__main__':
-    with open("input.txt") as f:
+    with open(sys.argv[1], 'r') as f, open(sys.argv[2], 'w') as out:
         content = [int(line) for line in f.read().strip().split('\n')]
-        print(count_sum_of_measurements(content))
+    
+        solution = count_sum_of_measurements(content)
+        
+        out.write(str(solution))
+

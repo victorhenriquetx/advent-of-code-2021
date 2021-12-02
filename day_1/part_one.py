@@ -1,3 +1,6 @@
+import sys
+
+
 def count_increases(measurements:list)->int:
     count = 0
     for i,_ in enumerate(measurements):
@@ -9,6 +12,7 @@ def count_increases(measurements:list)->int:
 
 
 if __name__ == '__main__':
-    with open("input.txt") as f:
+    with open(sys.argv[1], 'r') as f, open(sys.argv[2], 'w') as out:
         content = [int(line) for line in f.read().strip().split('\n')]
-        print(count_increases(content))
+        solution = count_increases(content)
+        out.write(str(solution))
