@@ -2,11 +2,11 @@ def count_sum_of_measurements(measurements:list)->int:
     count = 0
     window = sum(measurements[:3])
     new_measurements_list = measurements[1:]
-    for i,n in enumerate(new_measurements_list):
-        if i+3 == len(measurements):
+    for index,n in enumerate(new_measurements_list):
+        if index+3 == len(measurements):
             return count
         else:
-            new_window = sum(new_measurements_list[i:i+3])
+            new_window = sum(new_measurements_list[index:index+3])
             if new_window > window:
                 count+=1
             window = new_window
